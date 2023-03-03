@@ -1,0 +1,30 @@
+<p>update-category works!</p>
+<div class="col-md-6 offset-md-3">
+    <h3> Create Category </h3>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+
+        <div class="form-group">
+            <label >Category Name</label>
+            
+            <input [(ngModel)]="category.categoryName" formControlName="categoryName"
+            name="categoryName" class="form-control" type="text" >
+            
+          </div>
+          <label >Brand Name</label>
+
+          <div *ngFor="let brand of brandss;let i = index" >
+
+                
+            <input type="checkbox" formArrayName="selectedBrands" [value]="brand.brandId" 
+            [checked]="checkIfExist(brand)"
+            (change)="onCheckboxChange($event)" />
+            {{brand.brandName}}
+        
+    </div>
+        <br>
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+
+</div>
+<!--            *ngIf="category.brands.has(brand)" [checked]="true" 
+-->

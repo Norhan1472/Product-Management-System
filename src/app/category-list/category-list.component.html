@@ -1,0 +1,25 @@
+<button type="button" class="btn btn-outline-primary" (click)="addCategory()">Add Category</button>
+<!--(click)=""-->
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">categoryName</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let category of Categorys">
+        <td>{{category.categoryName}}</td>
+        <td>
+          <!--<button (click)="showText = !showText">Toggle</button>
+          <div *ngIf="showText">foo</div>-->
+          <button type="button" class="btn btn-outline-danger" (click)="update(category.categoryId)">Update</button>
+          <button type="button" class="btn btn-outline-primary" (click)="getDetails(category.categoryId)">Get Category Details</button>
+          <button type="button" class="btn btn-outline-danger" (click)="delete(category.categoryId)">Delete</button>
+
+        </td>
+      </tr>
+
+    </tbody>
+    
+  </table>

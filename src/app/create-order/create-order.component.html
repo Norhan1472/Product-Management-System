@@ -1,0 +1,113 @@
+<p>create-order works!</p>
+
+
+
+<!--   <div class="container">  
+    
+    <h1> Dynamically Add New Input Fields in Angular </h1>  
+      
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">  
+       
+        <div *ngFor="let formField of formFieldsP; let i = index" >
+    <div class="form-group">
+        
+        <label >Product Name</label>
+        <select class="form-control" (change)="onSelectedProduct($event)" >
+          <option selected="true" disabled="disabled">Choose a product name</option>
+          <option *ngFor="let product of products" [value]="product.productSerialNumber">
+              {{product.productName}}
+          </option>
+      </select>-->
+      <!--[ngModelOptions]="{standalone: true}"-->
+      <!-- <label for="name">Category Name:</label>  
+      <input type="text" [(ngModel)]="product.category.categoryName" 
+      [ngModelOptions]="{standalone: true}" class="form-control" [readOnly]="true">  
+    
+       <label for="name">Brand Name:</label>  
+       <input type="text" [(ngModel)]="brand.brandName" 
+       [ngModelOptions]="{standalone: true}" class="form-control" [readOnly]="true">  
+        </div>
+        <button (click)="addFormField()">Add Form Field</button>
+    </div>
+        -->
+ 
+    <!-- <div class="container">  
+    
+        <h1> Dynamically Add New Input Fields in Angular </h1>  
+          
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()">  
+            
+          <p>  
+            <label for="name">Product Name:</label>  
+            <input type="text" id="name" name="name" formControlName="name" class="form-control">  
+          </p>  
+          
+          <table class="table table-bordered" formArrayName="quantities">  
+            <tr>  
+              <th colspan="2">Add Multiple Quantity:</th>  
+              <th width="150px"><button type="button" (click)="addQuantity()" class="btn btn-outline-primary">Add More</button></th>  
+            </tr>  
+            <tr *ngFor="let quantity of quantities()?.controls; let i=index" [formGroupName]="i">  
+              <td>  
+                  Quantity :  
+                  <input type="text" formControlName="qty" class="form-control">  
+              </td>  
+              <td>  
+                  Price:  
+                  <input type="text" formControlName="price" class="form-control">  
+              </td>  
+              <td>  
+                  <button (click)="removeQuantity(i)" class="btn btn-outline-danger">Remove</button>  
+              </td>  
+            </tr>  
+          </table>  
+           
+          <button type="submit" class="btn btn-success">Submit</button>  
+            
+        </form>  
+            
+        <br/>  
+        {{this.productForm.value | json}}  
+      </div> -->  
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()">  
+        
+        <!--<p>  
+          <label for="name">Product Name:</label>  
+          <input type="text" id="name" name="name" formControlName="name" class="form-control">  
+        </p>  -->
+        
+        <table class="table table-bordered" >  
+          <tr>  
+            <th colspan="2">Add Multiple Products:</th>  
+            <th width="150px"><button type="button" (click)="addFormField()" class="btn btn-outline-primary">Add More</button></th>  
+          </tr>  
+          <tr *ngFor="let productt of formFieldsP; let i=index" >  <!--[formGroupName]="i"-->
+            <td> 
+              Product Name :
+              <select class="form-control" (change)=" onSelectedProduct($event)">
+                <option selected="true" disabled="disabled">Choose a product name</option>
+                <option *ngFor="let product of products" [value]="product.productSerialNumber">
+                    {{product.productName}}
+                </option>
+            </select>
+                 
+            </td>  
+            <td>
+              Category Name:
+              <input type="text" [value]="productt.category ? product.category.categoryName : ''" class="form-control" [readOnly]="true">
+
+            </td>
+            <td>
+              Brand Name:
+              <input type="text" [value]="productt.brand ? product.brand.brandName : ''" class="form-control" [readOnly]="true">
+
+              <!--Brand Name:
+              <input type="text" [(ngModel)]="productt.brand.brandName" 
+                     [ngModelOptions]="{standalone: true}" class="form-control" [readOnly]="true">-->
+            </td>
+          </tr>  
+        </table>  
+         
+        <button type="submit" class="btn btn-success">Submit</button>  
+          
+      </form>

@@ -1,0 +1,45 @@
+<h3> View Product Details</h3>
+<br>
+<br>
+<dl class="row">
+  <dt class="col-sm-3">Product Serial Number </dt>
+  <dd class="col-sm-9">{{product.productSerialNumber}}</dd>
+
+  <dt class="col-sm-3">Product Name </dt>
+  <dd class="col-sm-9">{{product.productName}}</dd>
+
+  <dt class="col-sm-3">Product Model </dt>
+  <dd class="col-sm-9">{{product.model}}</dd>
+
+  <dt class="col-sm-3">Product Type </dt>
+  <dd class="col-sm-9">{{product.type}}</dd>
+
+  <dt class="col-sm-3">Product Status </dt>
+  <dd class="col-sm-9">{{product.status}}</dd>
+
+  <dt class="col-sm-3">Product Specification </dt>
+  <dd class="col-sm-9">{{product.specification}}</dd>
+
+  <!--<dt class="col-sm-3">Category of product </dt>
+  <dd class="col-sm-9">{{product.category.categoryName}}</dd>
+  <dt class="col-sm-3">Category of product </dt>-->
+  <dt class="col-sm-3">Category of product </dt>
+  <dd class="col-sm-9">
+    <ng-container *ngIf="product.category">
+      {{product.category.categoryName}}
+    </ng-container>
+    <ng-container *ngIf="!product.category">
+      Category not available
+    </ng-container>
+  </dd>
+
+  <dt class="col-sm-3">Brand of product </dt>
+  <dd class="col-sm-9">
+  <ng-container *ngIf="product.brand">
+    {{product.brand.brandName}}
+  </ng-container>
+  <ng-container *ngIf="!product.brand">
+    Brand not available
+  </ng-container>
+  </dd>
+</dl>

@@ -1,0 +1,14 @@
+<p>category-details works!</p>
+<h3> View Category Details</h3>
+<br>
+<br>
+<dl class="row">
+  <dt class="col-sm-3">Category Name </dt>
+  <dd class="col-sm-9">{{category.categoryName}}</dd>
+
+  <dt class="col-sm-3">Brands</dt>
+  <dl class = "col-sm-3"*ngFor="let brand of category.brands">
+    <dd class="col-sm-9">{{brand.brandName}}</dd>
+  </dl>
+
+</dl>

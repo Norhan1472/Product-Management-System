@@ -1,0 +1,36 @@
+<p>order-details works!</p>
+
+<div class="col-md-6 offset-md-3">
+<dl class="row">
+    <dt class="col-sm-3">Employee Name</dt>
+    <dd class="col-sm-9">{{orders.empName}}</dd>
+    
+    <dt class="col-sm-3">National ID </dt>
+    <dd class="col-sm-9">{{orders.nationalId}}</dd>
+    
+    <dt class="col-sm-3">Employee Email </dt>
+    <dd class="col-sm-9">{{orders.email}}</dd>
+    
+    <dt class="col-sm-3">Description </dt>
+    <dd class="col-sm-9">{{orders.description}}</dd>
+
+</dl>  
+    <h3> Product of order </h3>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Product Name</th>
+            <th scope="col">Category </th>
+            <th scope="col">Brand </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{product.productName}}</td>
+            <td>{{product.category.categoryName}}</td>
+            <td>{{product.brand.brandName}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>

@@ -1,0 +1,13 @@
+<p>update-brand works!</p>
+<div class="col-md-6 offset-md-3">
+    <h1>Update Brand Data</h1>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label >Brand Name</label>
+          <input type="text" class="form-control" name="brandName" 
+           [(ngModel)]="brand.brandName">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>

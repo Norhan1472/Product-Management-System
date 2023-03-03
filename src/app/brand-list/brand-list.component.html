@@ -1,0 +1,21 @@
+<p>brand-list works!</p>
+<button type="button" class="btn btn-outline-primary" (click)="addBrand()">Add Brand</button>
+
+<h1>All Brands</h1>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Brand Name</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let brand of brands">
+        <td>{{brand.brandName}}</td>
+        <td>
+            <button type="button" class="btn btn-outline-primary" (click)="updateBrand(brand.brandId)">Update</button>
+            <button type="button" class="btn btn-outline-danger" (click)="deleteBrand(brand.brandId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

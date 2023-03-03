@@ -1,0 +1,32 @@
+<p>product-list works!</p>
+<button type="button" class="btn btn-outline-primary"(click)="goToAddProduct()">Add Product</button>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">product Serial Number</th>
+        <th scope="col">product Name</th>
+        <th scope="col">product status</th>
+        <th scope="col">brand Name</th>
+        <th scope="col">category</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let product of products">
+        <td>{{product.productSerialNumber}}</td>
+        <td>{{product.productName}}</td>
+        <td>{{product.status}}</td>
+        <td>{{product.brand.brandName}}</td>
+        <td>{{product.category.categoryName}}</td>
+        <td>
+          
+          <button type="button" class="btn btn-outline-danger" (click)="updateProduct(product.productSerialNumber)">Update</button>
+         
+          <button type="button" class="btn btn-outline-primary" (click)="productDetails(product.productSerialNumber)">Product Details</button>
+          <button type="button" class="btn btn-outline-danger" (click)="deleteProduct(product.productSerialNumber)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+    
+  </table>

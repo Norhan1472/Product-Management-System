@@ -1,0 +1,48 @@
+<p>generate-field works!</p>
+<!--<button (click)="generateFields()">Generate Field</button>-->
+<!--<div *ngFor="let field of fields">
+    <input [(ngModel)]="field.value" [readonly]="field.readonly"/>
+  </div>-->
+  <!--<div *ngFor="let field of fields">
+    <input [(ngModel)]="field.value" [disabled]="field.dependentField?.value ? !field.dependentField!.value : false"/>
+  </div>
+  
+-->
+<!--<form [formGroup]="form">
+    <div formArrayName="passenger">
+      <div
+        *ngFor="let passengerGroup of passenger?.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <h3>passenger - {{i + 1}}</h3>
+        <input type="text" formControlName="name" placeholder="name" />
+        <input type="text" formControlName="address" placeholder="address" />
+        <input type="text" formControlName="number" placeholder="number" />
+        <input type="text" formControlName="email" placeholder="email" />
+      </div>
+    </div>
+  
+    <button (click)="addPassenger()">Add Passenger</button>
+  </form>
+  
+  form - {{form.value | json}}-->
+  
+  <form [formGroup]="form">
+    <div formArrayName="passengers">
+      <div
+        *ngFor="let passengerGroup of passengerArray.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <h3>Passenger - {{i + 1}}</h3>
+        <input type="text" formControlName="name" placeholder="Name" />
+        <input type="text" formControlName="address" placeholder="Address" />
+        <input type="text" formControlName="number" placeholder="Number" />
+        <input type="text" formControlName="email" placeholder="Email" />
+      </div>
+    </div>
+  
+    <button (click)="addPassenger()">Add Passenger</button>
+  </form>
+  
+  <pre>{{ form.value | json }}</pre>
+  
